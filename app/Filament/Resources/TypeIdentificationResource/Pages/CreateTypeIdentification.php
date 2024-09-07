@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateTypeIdentification extends CreateRecord
 {
     protected static string $resource = TypeIdentificationResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

@@ -17,4 +17,12 @@ class ListTypeIdentifications extends ListRecords
             ->label('Crear tipo de identificacion'),
         ];
     }
+
+    protected function getTableActions(): array
+    {
+        return [
+            Actions\EditAction::make(),
+            Actions\DeleteAction::make(),
+        ];
+    }
 }
