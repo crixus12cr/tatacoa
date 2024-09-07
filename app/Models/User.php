@@ -19,8 +19,14 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_name',
         'email',
         'password',
+        'type_identification_id',
+        'dni',
+        'phone',
+        'username',
+        'city_id'
     ];
 
     /**
@@ -42,4 +48,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function typeIdentification () {
+        return $this->belongsTo(TypeIdentification::class);
+    }
+
+    public function city () {
+        return $this->hasMany(City::class);
+    }
+
 }
